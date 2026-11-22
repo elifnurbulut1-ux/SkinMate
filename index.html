@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkinMate</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+<!-- SkinMate Logo -->
+<div class="site-brand">
+
+    <div class="brand-frame">
+        <img src="images/TitleFrame.png" alt="SkinMate logo frame">
+
+        <div class="brand-text">
+            <h1>SkinMate</h1>
+            <p>♡ Your little guide to happy skin ♡</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Navigation -->
+<nav class="vintage-nav">
+    <a href="index.html">HOME</a>
+    <a href="skin-analysis.html">SKIN GUIDE</a>
+    <a href="routine.html">MY ROUTINE</a>
+    <a href="about.html">ABOUT</a>
+</nav>
+
+
+
+    <main>
+
+        
+<!-- Vintage Welcome Screen -->
+<section class="welcome" id="welcome">
+
+    <div class="vintage-logo">
+        <h1>SkinMate</h1>
+        <p>♡ Your little guide to happy skin ♡</p>
+    </div>
+
+    <div class="vintage-hero">
+
+       <img src="images/tepsi.png" class="hero-frame" alt="Vintage tepsi">
+        
+        <img src="images/cay.png" class="hero-tea" alt="Vintage teacup">
+
+        <img src="images/KEDI.png" class="hero-cat" alt="SkinMate cat">
+        <img src="images/catal.png" class="hero-fork" alt="Vintage fork">
+        <div class="hero-content">
+
+            <h2>Welcome to SkinMate</h2>
+
+            <p>
+                Discover a skincare routine made just for you.
+                Find the perfect products for your skin,
+                your concerns and your budget.
+            </p>
+
+            <button onclick="startPlanner()">
+                Create My Routine ♡
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+        <!-- Skin Type -->
+        <section id="skinSelection" style="display: none;">
+            <h2>What's your skin type?</h2>
+            <p>Select the option that best describes your skin.</p>
+
+            <div class="skin-options">
+                <button onclick="selectSkin('Oily')">Oily</button>
+                <button onclick="selectSkin('Dry')">Dry</button>
+                <button onclick="selectSkin('Combination')">Combination</button>
+                <button onclick="selectSkin('Normal')">Normal</button>
+                <button onclick="selectSkin('Sensitive')">Sensitive</button>
+            </div>
+
+            <p id="selectedSkin"></p>
+
+            <button onclick="goBackToWelcome()">← Back</button>
+            <button onclick="selectConcernStep()">Continue</button>
+        </section>
+
+
+        <!-- Skin Concerns -->
+        <section id="concernSelection" style="display: none;">
+            <h2>What are your skin concerns?</h2>
+            <p>Select all that apply.</p>
+
+            <div class="concern-options">
+                <label>
+                    <input type="checkbox" value="Acne"> Acne
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Blackheads"> Blackheads
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Dryness"> Dryness
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Redness"> Redness
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Dark Spots"> Dark Spots
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Fine Lines"> Fine Lines
+                </label>
+            </div>
+
+            <p id="selectedConcerns"></p>
+
+            <button onclick="goBackToSkin()">← Back</button>
+            <button onclick="saveConcerns()">Continue</button>
+        </section>
+
+
+        <!-- Budget -->
+        <section id="budgetSelection" style="display: none;">
+            <h2>What's your budget?</h2>
+            <p>Choose your skincare budget.</p>
+
+            <div class="budget-options">
+                <button onclick="selectBudget('Low')">Low Budget</button>
+                <button onclick="selectBudget('Medium')">Medium Budget</button>
+                <button onclick="selectBudget('High')">High Budget</button>
+            </div>
+
+            <p id="selectedBudget"></p>
+
+            <button onclick="goBackToConcerns()">← Back</button>
+            <button onclick="selectRoutineStep()">Continue</button>
+        </section>
+
+
+        <!-- Routine Preference -->
+        <section id="routineSelection" style="display: none;">
+            <h2>When would you like your routine?</h2>
+            <p>Choose your preferred routine.</p>
+
+            <div class="routine-options">
+                <button onclick="selectRoutine('Morning')">Morning (AM)</button>
+                <button onclick="selectRoutine('Evening')">Evening (PM)</button>
+                <button onclick="selectRoutine('Both')">Both (AM + PM)</button>
+            </div>
+
+            <p id="selectedRoutine"></p>
+
+            <button onclick="goBackToBudget()">← Back</button>
+
+            <button id="generateButton"
+                    onclick="generateRoutine()"
+                    style="display: none;">
+                Generate My Routine
+            </button>
+        </section>
+
+
+        <!-- Product Recommendations -->
+        <section id="results" style="display: none;">
+            <h2>Your SkinMate Routine ♡</h2>
+            <p id="routineSummary"></p>
+
+            <div class="routine-container">
+
+                <!-- Morning Routine -->
+                <div class="routine-column" id="morningRoutine">
+                    <h3>☀️ Morning Routine</h3>
+                    <div id="morningProducts"></div>
+                </div>
+
+                <!-- Night Routine -->
+                <div class="routine-column" id="nightRoutine">
+                    <h3>🌙 Night Routine</h3>
+                    <div id="nightProducts"></div>
+                </div>
+
+            </div>
+
+            <button onclick="goBackToRoutine()">← Edit My Selections</button>
+            <button onclick="startOver()">Start Over ♡</button>
+        </section>
+
+    </main>
+
+    <!-- JavaScript Files -->
+    <script src="js/products.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
+```
